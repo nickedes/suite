@@ -70,3 +70,6 @@ target/
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
+
+# No data
+*.csv
