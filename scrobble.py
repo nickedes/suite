@@ -19,7 +19,7 @@ totalPages = obj['recenttracks']['@attr']['totalPages']
 
 all_data = {}
 all_data[1] = obj
-for page in range(2, totalPages):
+for page in range(2, int(totalPages)):
     params = urllib.parse.urlencode(
         {'method': 'user.getRecentTracks', 'user': 'nickedes', 'format': 'json', 'page': page,
          'api_key': my_api_key})
