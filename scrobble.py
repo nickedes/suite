@@ -14,7 +14,7 @@ site = urllib.request.urlopen(url+params)
 
 str_response = site.readall().decode('utf-8')
 obj = json.loads(str_response)
-print(obj)
+print({1:obj})
 totalPages = obj['recenttracks']['@attr']['totalPages']
 
 all_data = {}
@@ -26,6 +26,4 @@ for page in range(2, int(totalPages)):
     site = urllib.request.urlopen(url+params)
     str_response = site.readall().decode('utf-8')
     all_data[page] = json.loads(str_response)
-
-# Todo: write all date to different files. "1.json" <-something lyk dis.
-print(all_data)
+    print({page: all_data[page]})
