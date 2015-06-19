@@ -3,7 +3,7 @@
 import csv
 
 with open('data/nickedes.csv', newline='') as csvfile:
-    data = csv.reader(csvfile, delimiter=',', quotechar='|')
+    data = csv.reader(csvfile, delimiter=',')
     artists = {}
     for row in data:
         if row[0] not in artists:
