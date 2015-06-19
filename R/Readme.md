@@ -6,5 +6,5 @@ Use Rstudio makes easier to work!.Run this script with Rstudio.
 
 Plot of Artists and it's count.
 
-![Plot](http://i.imgur.com/wDmDkCj.png) 
+![Plot](http://i.imgur.com/rvCRo4d.png) 
 
