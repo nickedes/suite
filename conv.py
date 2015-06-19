@@ -17,7 +17,7 @@ with open('data/nickedes.csv', newline='') as csvfile:
             albums[row[1]] += 1
     avg_artist = sum(artists.values())//len(artists)
     avg_album = sum(albums.values())//len(albums)
-    print(albums)
+
 with open('data/artists.csv', 'w', newline='') as csvfile:
     writer = csv.writer(csvfile, delimiter=',')
     writer.writerow(["Artist", "count", "average"])
