@@ -21,9 +21,3 @@ with open('data/artists.csv', 'w', newline='') as csvfile:
     for data in artists:
         if artists[data] >= avg:
             writer.writerow([data, artists[data], avg])
-
-with open('data/artists.csv', newline='') as csvfile:
-    data = csv.reader(csvfile, delimiter=',', quotechar='|')
-    for row in data:
-        if row[1] >= row[2]:
-            print(', '.join(row))

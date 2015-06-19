@@ -9,11 +9,17 @@ with open('data/nickedes.csv', newline='') as csvfile:
         i += 1
         if i != 1:
             try:
-                ranges = row[3][11:row[3].index(':')] + "-" + str(int(row[3][11:row[3].index(':')])+1)
+                ranges = row[3][11:row[3].index(':')] + "-" + str(int(row[3][
+                    11:row[3].index(':')])+1)
                 if ranges not in time_dict:
-                    time_dict[ranges]=1
+                    time_dict[ranges] = 1
                 else:
-                    time_dict[ranges]+=1
+                    time_dict[ranges] += 1
             except:
                 pass
 print(sum(time_dict.values()))
+with open('data/play_time.csv', 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile, delimiter=',')
+    writer.writerow(["Time", "count"])
+    for data in time_dict:
+        writer.writerow([data, time_dict[data]])
