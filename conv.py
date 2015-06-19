@@ -10,12 +10,20 @@ with open('data/nickedes.csv', newline='') as csvfile:
             artists[row[0]] = 1
         else:
             artists[row[0]] += 1
-with open('data/artists.csv', 'w', newline='') as csvfile:
-    spamwriter = csv.writer(csvfile, delimiter=',')
+    avg = 0
     for data in artists:
-        spamwriter.writerow([data, artists[data]])
+        avg += artists[data]
+    avg = avg//len(artists)
+    print(avg)
+with open('data/artists.csv', 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile, delimiter=',')
+    writer.writerow(["Artist", "count", "average"])
+    for data in artists:
+        if artists[data] >= avg:
+            writer.writerow([data, artists[data], avg])
 
 with open('data/artists.csv', newline='') as csvfile:
     data = csv.reader(csvfile, delimiter=',', quotechar='|')
     for row in data:
-        print(', '.join(row))
+        if row[1] >= row[2]:
+            print(', '.join(row))
