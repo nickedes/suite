@@ -16,3 +16,7 @@ Use Rstudio makes easier to work!.Run this script with Rstudio.
 
 1. artists.R -> Plot of `artists` and it's `count`(No. of scrobbles).
 2. plays.R -> Plots no. of scrobbles against time.
+
+# Todo:
+
+1. A plot which shows `artists` vs `scrobbles` during a particular time duration only.
